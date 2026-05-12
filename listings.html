@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!--
+  Category / listings — listings.css + listings.js + catalog.js + cart.js
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1a73e8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="manifest" href="manifest.json">
+    <title>Listings - Brand</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./listings.css">
+    <script src="./cart.js" defer></script>
+    <script src="./site.js" defer></script>
+    <script src="./catalog.js" defer></script>
+    <script src="./listings.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="top-navbar">
+            <div class="logo">
+                <a href="index.html"><img src="./assets/Layout/Brand/logo-colored.png" alt="Brand"></a>
+            </div>
+            <form class="search-bar">
+                <input type="text" placeholder="Search" />
+                <select>
+                    <option>All category</option>
+                    <option>Electronics</option>
+                    <option>Clothing</option>
+                </select>
+                <button type="submit">Search</button>
+            </form>
+            <div class="nav-icons">
+                <div class="nav-item">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Profile</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-regular fa-message"></i>
+                    <span>Message</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-regular fa-heart"></i>
+                    <a href="listings.html?category=mobile-accessories"><span>Orders</span></a>
+                </div>
+                <a href="shopping-cart.html" class="nav-item nav-cart-link" data-nav-cart-link aria-label="Shopping cart">
+                    <span class="nav-cart-visual" aria-hidden="true">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="nav-cart-badge" data-cart-badge hidden>0</span>
+                    </span>
+                    <span class="nav-cart-label">My cart</span>
+                </a>
+            </div>
+        </div>
+        <nav class="bottom-navbar">
+            <ul class="menu-left">
+                <li><a href="listings.html?category=mobile-accessories">☰ All category</a></li>
+                <li><a href="listings.html">Hot offers</a></li>
+                <li>Gift boxes</li>
+                <li>Projects</li>
+                <li>Menu item</li>
+                <li>Help</li>
+            </ul>
+            <ul class="menu-right">
+                <li>English, USD</li>
+                <li>Ship to <img src="./assets/Layout1/Image/flags/DE@2x.png" alt="DE"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-bar">
+        <div class="breadcrumb-inner">
+            <a href="index.html">Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="listings.html?category=mobile-accessories">Mobile accessories</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="listings.html?category=headphones" id="listingBreadcrumbMid">Category</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span id="listingBreadcrumbCurrent">All items</span>
+        </div>
+    </div>
+
+    <!-- PAGE BODY -->
+    <div class="listing-page">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="filter-block">
+                <div class="filter-header">
+                    <h4>Category</h4>
+                    <i class="fa-solid fa-chevron-up toggle-icon"></i>
+                </div>
+                <ul class="filter-list" id="categoryFilterList">
+                    <li class="filter-list-item active-cat" data-category="mobile-accessories" role="button" tabindex="0">Mobile accessories</li>
+                    <li class="filter-list-item" data-category="chargers" role="button" tabindex="0">Chargers</li>
+                    <li class="filter-list-item" data-category="covers" role="button" tabindex="0">Phone covers</li>
+                    <li class="filter-list-item" data-category="earphones" role="button" tabindex="0">Earphones</li>
+                    <li class="filter-list-item" data-category="power-banks" role="button" tabindex="0">Power banks</li>
+                    <li class="filter-list-item" data-category="headphones" role="button" tabindex="0">Headphones</li>
+                    <li class="filter-list-item" data-category="electronics" role="button" tabindex="0">Electronics</li>
+                </ul>
+                <a href="listings.html?category=mobile-accessories" class="see-all">View all mobile</a>
+            </div>
+
+            <div class="filter-divider"></div>
+
+            <div class="filter-block">
+                <div class="filter-header">
+                    <h4>Brands</h4>
+                    <i class="fa-solid fa-chevron-up toggle-icon"></i>
+                </div>
+                <ul class="filter-check-list">
+                    <li><label class="check-label"><input type="checkbox"> Samsung</label></li>
+                    <li><label class="check-label"><input type="checkbox"> Apple</label></li>
+                    <li><label class="check-label"><input type="checkbox"> Huawei</label></li>
+                    <li><label class="check-label"><input type="checkbox"> Pocco</label></li>
+                    <li><label class="check-label"><input type="checkbox"> Lenovo</label></li>
+                </ul>
+                <a href="#" class="see-all">See all</a>
+            </div>
+
+            <div class="filter-divider"></div>
+
+            <div class="filter-block">
+                <div class="filter-header">
+                    <h4>Features</h4>
+                    <i class="fa-solid fa-chevron-up toggle-icon"></i>
+                </div>
+                <ul class="filter-check-list">
+                    <li><label class="check-label"><input type="checkbox"> Metallic</label></li>
+                    <li><label class="check-label"><input type="checkbox"> Plastic cover</label></li>
+                    <li><label class="check-label"><input type="checkbox"> 8GB Ram</label></li>
+                    <li><label class="check-label"><input type="checkbox"> Super power</label></li>
+                    <li><label class="check-label"><input type="checkbox"> Large Memory</label></li>
+                </ul>
+                <a href="#" class="see-all">See all</a>
+            </div>
+
+            <div class="filter-divider"></div>
+
+            <div class="filter-block">
+                <div class="filter-header">
+                    <h4>Price range</h4>
+                    <i class="fa-solid fa-chevron-up toggle-icon"></i>
+                </div>
+                <div class="price-slider-wrap">
+                    <div class="price-track">
+                        <div class="price-fill"></div>
+                        <input type="range" class="range-input" id="priceMin" min="0" max="999999" value="0">
+                        <input type="range" class="range-input" id="priceMax" min="0" max="999999" value="999999">
+                    </div>
+                    <div class="price-inputs">
+                        <input type="number" placeholder="0" value="0">
+                        <span>—</span>
+                        <input type="number" placeholder="999999" value="999999">
+                    </div>
+                    <button class="apply-btn">Apply</button>
+                </div>
+            </div>
+
+            <div class="filter-divider"></div>
+
+            <div class="filter-block">
+                <div class="filter-header">
+                    <h4>Condition</h4>
+                    <i class="fa-solid fa-chevron-up toggle-icon"></i>
+                </div>
+                <ul class="filter-check-list">
+                    <li><label class="check-label"><input type="radio" name="condition" checked> Any</label></li>
+                    <li><label class="check-label"><input type="radio" name="condition"> Refurbished</label></li>
+                    <li><label class="check-label"><input type="radio" name="condition"> Brand new</label></li>
+                    <li><label class="check-label"><input type="radio" name="condition"> Old items</label></li>
+                </ul>
+            </div>
+
+            <div class="filter-divider"></div>
+
+            <div class="filter-block">
+                <div class="filter-header">
+                    <h4>Ratings</h4>
+                    <i class="fa-solid fa-chevron-up toggle-icon"></i>
+                </div>
+                <ul class="ratings-list">
+                    <li>
+                        <label class="check-label">
+                            <input type="checkbox">
+                            <span class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="check-label">
+                            <input type="checkbox">
+                            <span class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="check-label">
+                            <input type="checkbox">
+                            <span class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="check-label">
+                            <input type="checkbox">
+                            <span class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+        </aside>
+
+        <!-- MAIN -->
+        <main class="listing-main">
+
+            <div class="results-bar">
+                <p class="results-count" id="resultsCountLabel">Loading…</p>
+                <div class="results-controls">
+                    <label class="verified-check">
+                        <input type="checkbox" checked>
+                        <span>Verified only</span>
+                    </label>
+                    <div class="sort-wrap">
+                        <select id="listingSort">
+                            <option value="featured">Featured</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="name">Name A–Z</option>
+                        </select>
+                    </div>
+                    <div class="view-toggles">
+                        <button class="view-btn active" id="gridViewBtn" type="button">
+                            <i class="fa-solid fa-grip"></i>
+                        </button>
+                        <button class="view-btn" id="listViewBtn" type="button">
+                            <i class="fa-solid fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-list" id="productList" aria-live="polite">
+                <!-- Products injected by listings.js from catalog.js -->
+            </div>
+
+            <div class="pagination-bar">
+                <div class="show-per-page">
+                    <span>Show</span>
+                    <select>
+                        <option>10</option>
+                        <option>20</option>
+                        <option>50</option>
+                    </select>
+                </div>
+                <div class="pagination-controls">
+                    <button class="page-btn nav-btn" disabled><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn nav-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+
+    <!-- Newsletter -->
+    <div class="newsletter-section">
+        <h3 class="newsletter-title">Subscribe on our newsletter</h3>
+        <p class="newsletter-sub">Get daily news on upcoming offers from many suppliers all over the world</p>
+        <div class="newsletter-form">
+            <div class="newsletter-input-wrap">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" placeholder="Email">
+            </div>
+            <button class="newsletter-btn">Subscribe</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-top">
+
+            <!-- Brand -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Brand</span>
+                </div>
+                <p class="footer-desc">Best information about the company goes here but now lorem ipsum is</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- About -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">About</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Find store</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Blogs</a></li>
+                </ul>
+            </div>
+
+            <!-- Partnership -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Partnership</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Find store</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Blogs</a></li>
+                </ul>
+            </div>
+
+            <!-- Information -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Information</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Money Refund</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+
+            <!-- For users -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">For users</h4>
+                <ul>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">My Orders</a></li>
+                </ul>
+            </div>
+
+            <!-- Get app -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Get app</h4>
+                <div class="app-buttons">
+                    <a href="#" class="app-btn">
+                        <i class="fa-brands fa-apple"></i>
+                        <div>
+                            <span class="app-sub">Download on the</span>
+                            <span class="app-store">App Store</span>
+                        </div>
+                    </a>
+                    <a href="#" class="app-btn">
+                        <i class="fa-brands fa-google-play"></i>
+                        <div>
+                            <span class="app-sub">GET IT ON</span>
+                            <span class="app-store">Google Play</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>© 2023 Ecommerce.</p>
+            <div class="footer-lang">
+                <img src="./assets/Layout1/Image/flags/US@2x.png" alt="">
+                <span>English</span>
+                <i class="fa-solid fa-chevron-up"></i>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

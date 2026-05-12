@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<!--
+  Homepage — layout & sections: style.css | behavior: site.js, cart.js
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1a73e8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="manifest" href="manifest.json">
+    <title>E-Commerce Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./listings.css">
+    <script src="./cart.js" defer></script>
+    <script src="./site.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <!-- Top Navbar -->
+        <div class="top-navbar">
+            <div class="logo">
+                <a href="index.html"><img src="./assets/Layout/Brand/logo-colored.png" alt="Brand"></a>
+            </div>
+            <form class="search-bar">
+                <input type="text" placeholder="Search" />
+                <select>
+                    <option>All category</option>
+                    <option>Electronics</option>
+                    <option>Clothing</option>
+                </select>
+                <button type="submit">Search</button>
+            </form>
+            <div class="nav-icons">
+                <div class="nav-item">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Profile</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-regular fa-message"></i>
+                    <span>Message</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-regular fa-heart"></i>
+                    <a href="listings.html"><span>Orders</span></a>
+                </div>
+                <a href="shopping-cart.html" class="nav-item nav-cart-link" data-nav-cart-link aria-label="Shopping cart">
+                    <span class="nav-cart-visual" aria-hidden="true">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="nav-cart-badge" data-cart-badge hidden>0</span>
+                    </span>
+                    <span class="nav-cart-label">My cart</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bottom Navbar -->
+        <nav class="bottom-navbar">
+            <ul class="menu-left">
+                <li><a href="listings.html?category=mobile-accessories">☰ All category</a></li>
+                <li><a href="listings.html">Hot offers</a></li>
+                <li>Gift boxes</li>
+                <li>Projects</li>
+                <li>Menu item</li>
+                <li>Help</li>
+            </ul>
+            <ul class="menu-right">
+                <li>English, USD</li>
+                <li>Ship to <img src="./assets/Layout1/Image/flags/DE@2x.png" alt=""></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="breadcrumb-bar">
+        <div class="breadcrumb-inner">
+            <a href="index.html">Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="listings.html">Listings</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="product.html">Product</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Home page</span>
+        </div>
+    </div>
+
+    <!-- Main Section -->
+    <div class="main">
+
+        <!-- Left: Categories -->
+        <div class="categories">
+            <ul>
+                <li class="active">Automobiles</li>
+                <li>Clothes and wear</li>
+                <li>Home interiors</li>
+                <li>Computer and tech</li>
+                <li>Tools, equipments</li>
+                <li>Sports and outdoor</li>
+                <li>Animal and pets</li>
+                <li>Machinery tools</li>
+                <li>More category</li>
+            </ul>
+        </div>
+
+        <!-- Center: Banner -->
+        <div class="main-banner">
+            <div class="banner-content">
+                <p class="banner-subtitle">Latest trending</p>
+                <h2 class="banner-title">Electronic items</h2>
+                <a class="learn-more-btn" href="listings.html?category=mobile-accessories">Learn more</a>
+            </div>
+            <img src="./assets/Image/backgrounds/Banner-board-800x420 2.png" alt="Banner" class="banner-img">
+        </div>
+
+        <!-- Right: Side Panel -->
+        <div class="side-panel">
+
+            <div class="user-card">
+                <div class="user-info">
+                    <i class="fa-regular fa-user user-avatar-icon"></i>
+                    <div>
+                        <p class="user-hello">Hi, user</p>
+                        <p class="user-sub">let's get started</p>
+                    </div>
+                </div>
+                <div class="auth-buttons">
+                    <button class="btn-join">Join now</button>
+                    <button class="btn-login">Log in</button>
+                </div>
+            </div>
+
+            <div class="promo-card promo-orange">
+                <p>Get US $10 off</p>
+                <p>with a new supplier</p>
+            </div>
+
+            <div class="promo-card promo-teal">
+                <p>Send quotes with</p>
+                <p>supplier preferences</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Deals and Offers Section -->
+    <div class="deals-section">
+
+        <!-- Left: Title + Timer -->
+        <div class="deals-left">
+            <h3 class="deals-title">Deals and offers</h3>
+            <p class="deals-sub">Hygiene equipments</p>
+            <div class="countdown">
+                <div class="countdown-box">
+                    <span class="count-num">04</span>
+                    <span class="count-label">Days</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="count-num">13</span>
+                    <span class="count-label">Hour</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="count-num">34</span>
+                    <span class="count-label">Min</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="count-num">56</span>
+                    <span class="count-label">Sec</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Product Cards -->
+        <div class="deals-products">
+
+            <div class="deal-card">
+                <img src="./assets/Image/tech/8.png" alt="Smart watches">
+                <p class="deal-name">Smart watches</p>
+                <span class="deal-discount">-25%</span>
+            </div>
+
+            <div class="deal-card">
+                <img src="./assets/Image/tech/image 34.png" alt="Phone and tablet accessories">
+                <p class="deal-name">Tablet gear</p>
+                <span class="deal-discount">-15%</span>
+            </div>
+
+            <div class="deal-card">
+                <img src="./assets/Image/tech/6.png" alt="GoPro cameras">
+                <p class="deal-name">GoPro cameras</p>
+                <span class="deal-discount">-40%</span>
+            </div>
+
+            <div class="deal-card">
+                <img src="./assets/Image/tech/image 29.png" alt="Headphones">
+                <p class="deal-name">Headphones</p>
+                <span class="deal-discount">-25%</span>
+            </div>
+
+            <div class="deal-card">
+                <img src="./assets/Image/tech/image 33.png" alt="Chargers and adapters">
+                <p class="deal-name">Fast chargers</p>
+                <span class="deal-discount">-25%</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= HOME & OUTDOOR ================= -->
+    <div class="home-section">
+
+        <!-- LEFT BIG CARD -->
+        <div class="home-banner">
+            <div class="home-banner-content">
+                <h3>Home and outdoor</h3>
+                <button>Source now</button>
+            </div>
+            <img src="./assets/home/sofa.png" alt="">
+        </div>
+
+        <!-- RIGHT GRID -->
+        <div class="home-grid">
+
+            <div class="home-card">
+                <p>Soft chairs</p>
+                <span>From USD 19</span>
+                <img src="./assets/Image/interior/1.png" alt="">
+            </div>
+
+            <div class="home-card">
+                <p>Sofa & chair</p>
+                <span>From USD 19</span>
+                <img src="./assets/Image/interior/6.png" alt="">
+            </div>
+
+            <div class="home-card">
+                <p>Kitchen dishes</p>
+                <span>From USD 19</span>
+                <img src="./assets/Image/interior/image 93.png" alt="">
+            </div>
+
+            <div class="home-card">
+                <p>Home decor</p>
+                <span>From USD 19</span>
+                <img src="./assets/Image/interior/3.png" alt="">
+            </div>
+
+            <div class="home-card">
+                <p>Kitchen mixer</p>
+                <span>From USD 100</span>
+                <img src="./assets/Image/interior/9.png" alt="">
+            </div>
+
+            <div class="home-card">
+                <p>Blenders</p>
+                <span>From USD 39</span>
+                <img src="./assets/Image/interior/8.png" alt="">
+            </div>
+
+            <div class="home-card">
+                <p>Home appliance</p>
+                <span>From USD 19</span>
+                <img src="./assets/Image/interior/7.png" alt="">
+            </div>
+
+            <div class="home-card">
+                <p>Coffee maker</p>
+                <span>From USD 10</span>
+                <img src="./assets/Image/interior/image 89.png" alt="">
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Consumer Electronics Section -->
+    <div class="electronics-section">
+
+        <!-- Left promo panel -->
+        <div class="electronics-left">
+            <h3 class="electronics-title">Consumer electronics and gadgets</h3>
+            <button class="source-btn">Source now</button>
+            <img src="./assets/Image/backgrounds/image 98.png" alt="Electronics" class="electronics-promo-img">
+        </div>
+
+        <!-- Right product grid -->
+        <div class="electronics-grid">
+
+            <div class="elec-card">
+                <div class="elec-info">
+                    <p class="elec-name">Smart watches</p>
+                    <p class="elec-from">From</p>
+                    <p class="elec-price">USD 19</p>
+                </div>
+                <img src="./assets/Image/tech/8.png" alt="">
+            </div>
+
+            <div class="elec-card">
+                <div class="elec-info">
+                    <p class="elec-name">Cameras</p>
+                    <p class="elec-from">From</p>
+                    <p class="elec-price">USD 89</p>
+                </div>
+                <img src="./assets/Image/tech/6.png" alt="">
+            </div>
+
+            <div class="elec-card">
+                <div class="elec-info">
+                    <p class="elec-name">Headphones</p>
+                    <p class="elec-from">From</p>
+                    <p class="elec-price">USD 10</p>
+                </div>
+                <img src="./assets/Image/tech/image 29.png" alt="">
+            </div>
+
+            <div class="elec-card">
+                <div class="elec-info">
+                    <p class="elec-name">Smartphones</p>
+                    <p class="elec-from">From</p>
+                    <p class="elec-price">USD 90</p>
+                </div>
+                <img src="./assets/Image/tech/image 85.png" alt="">
+            </div>
+
+            <div class="elec-card">
+                <div class="elec-info">
+                    <p class="elec-name">Headphones</p>
+                    <p class="elec-from">From</p>
+                    <p class="elec-price">USD 35</p>
+                </div>
+                <img src="./assets/Image/tech/image 29.png" alt="">
+            </div>
+
+            <div class="elec-card">
+                <div class="elec-info">
+                    <p class="elec-name">Laptops & PC</p>
+                    <p class="elec-from">From</p>
+                    <p class="elec-price">USD 340</p>
+                </div>
+                <img src="./assets/Image/tech/image 34.png" alt="">
+            </div>
+
+            <div class="elec-card">
+                <div class="elec-info">
+                    <p class="elec-name">Phone cases</p>
+                    <p class="elec-from">From</p>
+                    <p class="elec-price">USD 19</p>
+                </div>
+                <img src="./assets/Image/tech/image 32.png" alt="">
+            </div>
+
+            <div class="elec-card">
+                <div class="elec-info">
+                    <p class="elec-name">Chargers &amp; power</p>
+                    <p class="elec-from">From</p>
+                    <p class="elec-price">USD 240</p>
+                </div>
+                <img src="./assets/Image/tech/image 33.png" alt="">
+            </div>
+
+        </div>
+    </div>
+    <!-- Quote Banner Section -->
+    <div class="quote-banner">
+
+        <!-- Left: Text -->
+        <div class="quote-left">
+            <h2 class="quote-title">An easy way to send requests to all suppliers</h2>
+            <p class="quote-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt.</p>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="quote-form">
+            <h4 class="form-title">Send quote to suppliers</h4>
+            <input type="text" class="form-input" placeholder="What item you need?">
+            <textarea class="form-textarea" placeholder="Type more details"></textarea>
+            <div class="form-row">
+                <input type="text" class="form-input quantity-input" placeholder="Quantity">
+                <select class="form-select">
+                    <option>Pcs</option>
+                    <option>Kg</option>
+                    <option>Ltr</option>
+                    <option>Box</option>
+                </select>
+            </div>
+            <button class="send-inquiry-btn">Send inquiry</button>
+        </div>
+
+    </div>
+
+    <!-- Recommended Items Section -->
+    <div class="recommended-section">
+        <h3 class="recommended-title">Recommended items</h3>
+
+        <div class="recommended-grid">
+
+            <div class="product-card">
+                <div class="product-img-wrap">
+                    <img src="./assets/Layout/alibaba/Image/cloth/1.png" alt="">
+                </div>
+                <div class="product-info">
+                    <p class="product-price">$10.30</p>
+                    <p class="product-name">T-shirts with multiple colors, for men</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-wrap">
+                    <img src="./assets/Layout/alibaba/Image/cloth/2.png" alt="">
+                </div>
+                <div class="product-info">
+                    <p class="product-price">$10.30</p>
+                    <p class="product-name">Jeans shorts for men blue color</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-wrap">
+                    <img src="./assets/Layout/alibaba/Image/cloth/3.png" alt="">
+                </div>
+                <div class="product-info">
+                    <p class="product-price">$12.50</p>
+                    <p class="product-name">Brown winter coat medium size</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-wrap">
+                    <img src="./assets/Layout/alibaba/Image/cloth/4.png" alt="">
+                </div>
+                <div class="product-info">
+                    <p class="product-price">$34.00</p>
+                    <p class="product-name">Jeans bag for travel for men</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-wrap">
+                    <img src="./assets/Layout/alibaba/Image/cloth/5.png" alt="">
+                </div>
+                <div class="product-info">
+                    <p class="product-price">$99.00</p>
+                    <p class="product-name">Leather wallet</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-wrap">
+                    <img src="./assets/Layout/alibaba/Image/cloth/6.png" alt="">
+                </div>
+                <div class="product-info">
+                    <p class="product-price">$9.99</p>
+                    <p class="product-name">Men's casual shirt, short sleeve</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-wrap">
+                    <img src="./assets/Layout/alibaba/Image/tech/image 86.png" alt="">
+                </div>
+                <div class="product-info">
+                    <p class="product-price">$8.99</p>
+                    <p class="product-name">Headset for gaming with mic</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-wrap">
+                    <img src="./assets/Layout/alibaba/Image/cloth/5.png" alt="">
+                </div>
+                <div class="product-info">
+                    <p class="product-price">$10.30</p>
+                    <p class="product-name">Leather bifold wallet, brown</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-wrap">
+                    <img src="./assets/Layout/alibaba/Image/interior/image 90.png" alt="">
+                </div>
+                <div class="product-info">
+                    <p class="product-price">$10.30</p>
+                    <p class="product-name">Upholstered accent chair, modern</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-wrap">
+                    <img src="./assets/Layout/alibaba/Image/tech/image 85.png" alt="">
+                </div>
+                <div class="product-info">
+                    <p class="product-price">$80.95</p>
+                    <p class="product-name">Unlocked smartphone, dual camera</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Our Extra Services Section -->
+    <div class="services-section">
+        <h3 class="services-title">Our extra services</h3>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="service-img-wrap">
+                    <img src="./assets/Image/backgrounds/Mask group.png" alt="">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                <p class="service-name">Source from Industry Hubs</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-img-wrap">
+                    <img src="./assets/Image/backgrounds/./Mask group (1).png" alt="">
+                    <div class="service-icon">
+                        <i class="fa-regular fa-rectangle-list"></i>
+                    </div>
+                </div>
+                <p class="service-name">Customize Your Products</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-img-wrap">
+                    <img src="./assets/Image/backgrounds/./image 106.png" alt="">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+                </div>
+                <p class="service-name">Fast, reliable shipping by ocean or air</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-img-wrap">
+                    <img src="./assets/Image/backgrounds/./image 107.png" alt="">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                </div>
+                <p class="service-name">Product monitoring and inspection</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Suppliers by Region -->
+    <div class="suppliers-section">
+        <h3 class="suppliers-title">Suppliers by region</h3>
+        <div class="suppliers-grid">
+
+            <div class="supplier-item">
+                <img src="./assets/Layout1/Image/flags/AE@2x.png" alt="">
+                <div>
+                    <p class="supplier-country">Arabic Emirates</p>
+                    <p class="supplier-domain">shopname.ae</p>
+                </div>
+            </div>
+
+            <div class="supplier-item">
+                <img src="./assets/Layout1/Image/flags/icon.png" alt="">
+                <div>
+                    <p class="supplier-country">Australia</p>
+                    <p class="supplier-domain">shopname.ae</p>
+                </div>
+            </div>
+
+            <div class="supplier-item">
+                <img src="./assets/Layout1/Image/flags/US@2x.png" alt="">
+                <div>
+                    <p class="supplier-country">United States</p>
+                    <p class="supplier-domain">shopname.ae</p>
+                </div>
+            </div>
+
+            <div class="supplier-item">
+                <img src="./assets/Layout1/Image/flags/RU@2x.png" alt="">
+                <div>
+                    <p class="supplier-country">Russia</p>
+                    <p class="supplier-domain">shopname.ru</p>
+                </div>
+            </div>
+
+            <div class="supplier-item">
+                <img src="./assets/Layout1/Image/flags/IT@2x.png" alt="">
+                <div>
+                    <p class="supplier-country">Italy</p>
+                    <p class="supplier-domain">shopname.it</p>
+                </div>
+            </div>
+
+            <div class="supplier-item">
+                <img src="./assets/Layout1/Image/flags/DK@2x.png" alt="">
+                <div>
+                    <p class="supplier-country">Denmark</p>
+                    <p class="supplier-domain">denmark.com.dk</p>
+                </div>
+            </div>
+
+            <div class="supplier-item">
+                <img src="./assets/Layout1/Image/flags/FR@2x.png" alt="">
+                <div>
+                    <p class="supplier-country">France</p>
+                    <p class="supplier-domain">shopname.com.fr</p>
+                </div>
+            </div>
+
+            <div class="supplier-item">
+                <img src="./assets/Layout1/Image/flags/AE@2x.png" alt="">
+                <div>
+                    <p class="supplier-country">Arabic Emirates</p>
+                    <p class="supplier-domain">shopname.ae</p>
+                </div>
+            </div>
+
+            <div class="supplier-item">
+                <img src="./assets/Layout1/Image/flags/CN@2x.png" alt="">
+                <div>
+                    <p class="supplier-country">China</p>
+                    <p class="supplier-domain">shopname.ae</p>
+                </div>
+            </div>
+
+            <div class="supplier-item">
+                <img src="./assets/Layout1/Image/flags/GB@2x.png" alt="">
+                <div>
+                    <p class="supplier-country">Great Britain</p>
+                    <p class="supplier-domain">shopname.co.uk</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="newsletter-section">
+        <h3 class="newsletter-title">Subscribe on our newsletter</h3>
+        <p class="newsletter-sub">Get daily news on upcoming offers from many suppliers all over the world</p>
+        <div class="newsletter-form">
+            <div class="newsletter-input-wrap">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" placeholder="Email">
+            </div>
+            <button class="newsletter-btn">Subscribe</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+
+            <!-- Brand -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Brand</span>
+                </div>
+                <p class="footer-desc">Best information about the company goes here but now lorem ipsum is</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- About -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">About</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Find store</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Blogs</a></li>
+                </ul>
+            </div>
+
+            <!-- Partnership -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Partnership</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Find store</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Blogs</a></li>
+                </ul>
+            </div>
+
+            <!-- Information -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Information</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Money Refund</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+
+            <!-- For users -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">For users</h4>
+                <ul>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">My Orders</a></li>
+                </ul>
+            </div>
+
+            <!-- Get app -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Get app</h4>
+                <div class="app-buttons">
+                    <a href="#" class="app-btn">
+                        <i class="fa-brands fa-apple"></i>
+                        <div>
+                            <span class="app-sub">Download on the</span>
+                            <span class="app-store">App Store</span>
+                        </div>
+                    </a>
+                    <a href="#" class="app-btn">
+                        <i class="fa-brands fa-google-play"></i>
+                        <div>
+                            <span class="app-sub">GET IT ON</span>
+                            <span class="app-store">Google Play</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>© 2023 Ecommerce.</p>
+            <div class="footer-lang">
+                <img src="./assets/Layout1/Image/flags/US@2x.png" alt="">
+                <span>English</span>
+                <i class="fa-solid fa-chevron-up"></i>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "Brand E-Commerce",
+  "short_name": "Brand Shop",
+  "description": "Shop electronics, home, and more.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7fafc",
+  "theme_color": "#1a73e8",
+  "orientation": "any",
+  "icons": []
+}

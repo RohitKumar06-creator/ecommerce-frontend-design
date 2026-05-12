@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!--
+  Cart — shopping-cart.css + cart-page.js + cart.js
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1a73e8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="manifest" href="manifest.json">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shopping-cart.css">
+    <script src="./cart.js" defer></script>
+    <script src="./site.js" defer></script>
+    <script src="./cart-page.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="top-navbar">
+            <div class="logo">
+                <a href="index.html"><img src="./assets/Layout/Brand/logo-colored.png" alt="Brand"></a>
+            </div>
+            <form class="search-bar">
+                <input type="text" placeholder="Search" />
+                <select>
+                    <option>All category</option>
+                    <option>Electronics</option>
+                    <option>Clothing</option>
+                </select>
+                <button type="submit">Search</button>
+            </form>
+            <div class="nav-icons">
+                <div class="nav-item">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Profile</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-regular fa-message"></i>
+                    <span>Message</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-regular fa-heart"></i>
+                    <a href="listings.html"><span>Orders</span></a>
+                </div>
+                <a href="shopping-cart.html" class="nav-item nav-cart-link" data-nav-cart-link aria-current="page" aria-label="Shopping cart">
+                    <span class="nav-cart-visual" aria-hidden="true">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="nav-cart-badge" data-cart-badge hidden>0</span>
+                    </span>
+                    <span class="nav-cart-label">My cart</span>
+                </a>
+            </div>
+        </div>
+        <nav class="bottom-navbar">
+            <ul class="menu-left">
+                <li><a href="listings.html?category=mobile-accessories">☰ All category</a></li>
+                <li><a href="listings.html">Hot offers</a></li>
+                <li>Gift boxes</li>
+                <li>Projects</li>
+                <li>Menu item</li>
+                <li>Help</li>
+            </ul>
+            <ul class="menu-right">
+                <li>English, USD</li>
+                <li>Ship to <img src="./assets/Layout1/Image/flags/DE@2x.png" alt="DE"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb-bar">
+        <div class="breadcrumb-inner">
+            <a href="index.html">Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="listings.html?category=mobile-accessories">Listings</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="product.html">Product</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Shopping cart</span>
+        </div>
+    </div>
+
+    <div class="container cart-page">
+
+        <h1 id="cartPageTitle">My cart</h1>
+
+        <div class="cart-layout">
+
+            <!-- LEFT CART -->
+            <div class="cart">
+
+                <div id="cartItemsRoot"></div>
+
+                <!-- FOOTER -->
+                <div class="cart-footer">
+                    <button type="button" class="back-btn" id="cartBackToShop">← Back to shop</button>
+                    <button type="button" class="remove-all" id="cartRemoveAll">Remove all</button>
+                </div>
+
+            </div>
+
+            <!-- SUMMARY -->
+            <div class="summary">
+
+                <div class="coupon">
+
+                    <h3>Have a coupon?</h3>
+
+                    <div class="coupon-box">
+                        <input type="text" placeholder="Add coupon">
+                        <button>Apply</button>
+                    </div>
+
+                </div>
+
+                <div class="summary-box">
+
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="cartSubtotal">$0.00</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Discount:</span>
+                        <span class="discount" id="cartDiscount">$0.00</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Tax:</span>
+                        <span class="tax" id="cartTax">$0.00</span>
+                    </div>
+
+                    <hr style="margin:20px 0;">
+
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="cartTotal">$0.00</span>
+                    </div>
+
+                    <button type="button" class="checkout" id="cartCheckoutBtn">Checkout</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FEATURES -->
+        <div class="features">
+
+            <div class="feature">
+                <div class="icon">🔒</div>
+                <div>
+                    <strong>Secure payment</strong>
+                    <p>Have you ever finally just</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="icon">💬</div>
+                <div>
+                    <strong>Customer support</strong>
+                    <p>Have you ever finally just</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="icon">🚚</div>
+                <div>
+                    <strong>Free delivery</strong>
+                    <p>Have you ever finally just</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SAVED -->
+        <div class="saved">
+
+            <h2>Saved for later</h2>
+
+            <div class="saved-grid" id="savedItemsRoot"></div>
+
+        </div>
+
+    </div>
+    <!-- Newsletter -->
+    <div class="newsletter-section">
+        <h3 class="newsletter-title">Subscribe on our newsletter</h3>
+        <p class="newsletter-sub">Get daily news on upcoming offers from many suppliers all over the world</p>
+        <div class="newsletter-form">
+            <div class="newsletter-input-wrap">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" placeholder="Email">
+            </div>
+            <button class="newsletter-btn">Subscribe</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+
+            <!-- Brand -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Brand</span>
+                </div>
+                <p class="footer-desc">Best information about the company goes here but now lorem ipsum is</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- About -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">About</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Find store</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Blogs</a></li>
+                </ul>
+            </div>
+
+            <!-- Partnership -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Partnership</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Find store</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Blogs</a></li>
+                </ul>
+            </div>
+
+            <!-- Information -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Information</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Money Refund</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+
+            <!-- For users -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">For users</h4>
+                <ul>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">My Orders</a></li>
+                </ul>
+            </div>
+
+            <!-- Get app -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Get app</h4>
+                <div class="app-buttons">
+                    <a href="#" class="app-btn">
+                        <i class="fa-brands fa-apple"></i>
+                        <div>
+                            <span class="app-sub">Download on the</span>
+                            <span class="app-store">App Store</span>
+                        </div>
+                    </a>
+                    <a href="#" class="app-btn">
+                        <i class="fa-brands fa-google-play"></i>
+                        <div>
+                            <span class="app-sub">GET IT ON</span>
+                            <span class="app-store">Google Play</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>© 2023 Ecommerce.</p>
+            <div class="footer-lang">
+                <img src="./assets/Layout1/Image/flags/US@2x.png" alt="">
+                <span>English</span>
+                <i class="fa-solid fa-chevron-up"></i>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

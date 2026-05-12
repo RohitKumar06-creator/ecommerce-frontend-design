@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<!--
+  Product detail — product.css + product-page.js + catalog.js + cart.js
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#1a73e8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="manifest" href="manifest.json" />
+    <title>Product Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product.css">
+    <script src="./cart.js" defer></script>
+    <script src="./site.js" defer></script>
+    <script src="./catalog.js" defer></script>
+    <script src="./product-page.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="top-navbar">
+            <div class="logo">
+                <a href="index.html"><img src="./assets/Layout/Brand/logo-colored.png" alt="Brand"></a>
+            </div>
+            <form class="search-bar">
+                <input type="text" placeholder="Search" />
+                <select>
+                    <option>All category</option>
+                    <option>Electronics</option>
+                    <option>Clothing</option>
+                </select>
+                <button type="submit">Search</button>
+            </form>
+            <div class="nav-icons">
+                <div class="nav-item">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Profile</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-regular fa-message"></i>
+                    <span>Message</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-regular fa-heart"></i>
+                    <a href="listings.html"><span>Orders</span></a>
+                </div>
+                <a href="shopping-cart.html" class="nav-item nav-cart-link" data-nav-cart-link aria-label="Shopping cart">
+                    <span class="nav-cart-visual" aria-hidden="true">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="nav-cart-badge" data-cart-badge hidden>0</span>
+                    </span>
+                    <span class="nav-cart-label">My cart</span>
+                </a>
+            </div>
+        </div>
+        <nav class="bottom-navbar">
+            <ul class="menu-left">
+                <li><a href="listings.html?category=mobile-accessories">☰ All category</a></li>
+                <li><a href="listings.html">Hot offers</a></li>
+                <li>Gift boxes</li>
+                <li>Projects</li>
+                <li>Menu item</li>
+                <li>Help</li>
+            </ul>
+            <ul class="menu-right">
+                <li>English, USD</li>
+                <li>Ship to <img src="./assets/Layout1/Image/flags/DE@2x.png" alt="DE"></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="breadcrumb-bar">
+        <div class="breadcrumb-inner">
+            <a href="index.html">Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="listings.html?category=mobile-accessories">Clothings</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="listings.html?category=headphones">Men's wear</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Summer clothing</span>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- LEFT -->
+        <div class="left">
+
+            <div class="main-image">
+                <img id="productMainImage" src="./assets/Layout/alibaba/Image/cloth/1.png" alt="Product">
+            </div>
+
+            <div class="thumbnails">
+                <div class="thumb"><img src="./assets/Layout/alibaba/Image/cloth/1.png"></div>
+                <div class="thumb"><img src="./assets/Layout/alibaba/Image/cloth/2.png"></div>
+                <div class="thumb"><img src="./assets/Layout/alibaba/Image/cloth/3.png"></div>
+                <div class="thumb"><img src="./assets/Layout/alibaba/Image/cloth/4.png"></div>
+                <div class="thumb"><img src="./assets/Layout/alibaba/Image/cloth/5.png"></div>
+            </div>
+
+        </div>
+
+        <!-- MIDDLE -->
+        <div class="middle">
+
+            <div class="stock">✔ In stock</div>
+
+            <div class="title" id="productPageTitle">
+                Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle
+            </div>
+
+            <div class="rating">
+                <span>⭐⭐⭐⭐⭐ 9.3</span>
+                <span>32 reviews</span>
+                <span>154 sold</span>
+            </div>
+
+            <div class="price-box">
+
+                <div class="price">
+                    <h2>$98.00</h2>
+                    <p>50-100 pcs</p>
+                </div>
+
+                <div class="price">
+                    <h2>$90.00</h2>
+                    <p>100-700 pcs</p>
+                </div>
+
+                <div class="price">
+                    <h2>$78.00</h2>
+                    <p>700+ pcs</p>
+                </div>
+
+            </div>
+
+            <div class="info">
+
+                <div class="info-row">
+                    <div class="label">Price:</div>
+                    <div class="value">Negotiable</div>
+                </div>
+
+                <div class="info-row">
+                    <div class="label">Type:</div>
+                    <div class="value">Classic shoes</div>
+                </div>
+
+                <div class="info-row">
+                    <div class="label">Material:</div>
+                    <div class="value">Plastic material</div>
+                </div>
+
+                <div class="info-row">
+                    <div class="label">Design:</div>
+                    <div class="value">Modern nice</div>
+                </div>
+
+                <div class="info-row">
+                    <div class="label">Customization:</div>
+                    <div class="value">
+                        Customized logo and design custom packages
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <div class="label">Protection:</div>
+                    <div class="value">Refund Policy</div>
+                </div>
+
+                <div class="info-row">
+                    <div class="label">Warranty:</div>
+                    <div class="value">2 years full warranty</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right">
+
+            <div class="supplier">
+
+                <div class="logo">R</div>
+
+                <div>
+                    <div style="color:#777;">Supplier</div>
+                    <div class="company">Guanjoi Trading LLC</div>
+                </div>
+
+            </div>
+
+            <div class="details">
+                🇩🇪 Germany, Berlin <br>
+                ✔ Verified Seller <br>
+                🌐 Worldwide shipping
+            </div>
+
+            <button type="button" class="btn primary" id="productAddToCartBtn">Add to cart</button>
+            <button type="button" class="btn secondary">Send inquiry</button>
+            <button type="button" class="btn secondary">Seller's profile</button>
+
+            <div class="save">♡ Save for later</div>
+
+        </div>
+
+    </div>
+    <!-- TOP SECTION -->
+    <div class="top-section">
+
+        <!-- LEFT -->
+        <div class="left-panel">
+
+            <!-- TABS -->
+            <div class="tabs">
+                <div class="tab active">Description</div>
+                <div class="tab">Reviews</div>
+                <div class="tab">Shipping</div>
+                <div class="tab">About seller</div>
+            </div>
+
+            <!-- DESCRIPTION -->
+            <div class="description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+
+                <br><br>
+
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident.
+            </div>
+
+            <!-- TABLE -->
+            <table class="info-table">
+
+                <tr>
+                    <td>Model</td>
+                    <td>#8786867</td>
+                </tr>
+
+                <tr>
+                    <td>Style</td>
+                    <td>Classic style</td>
+                </tr>
+
+                <tr>
+                    <td>Certificate</td>
+                    <td>ISO-898921212</td>
+                </tr>
+
+                <tr>
+                    <td>Size</td>
+                    <td>34mm x 450mm x 19mm</td>
+                </tr>
+
+                <tr>
+                    <td>Memory</td>
+                    <td>36GB RAM</td>
+                </tr>
+
+            </table>
+
+            <!-- FEATURES -->
+            <ul class="features">
+                <li>Some great feature name here</li>
+                <li>Lorem ipsum dolor sit amet, consectetur</li>
+                <li>Duis aute irure dolor in reprehenderit</li>
+                <li>Some great feature name here</li>
+            </ul>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right-panel">
+
+            <h3>You may like</h3>
+
+            <div class="suggestion">
+                <img src="./assets/Layout/alibaba/Image/cloth/1.png" alt="">
+                <div class="suggestion-info">
+                    <h4>Men Blazers Sets Elegant Formal</h4>
+                    <div class="price">$70.00 - $99.50</div>
+                </div>
+            </div>
+
+            <div class="suggestion">
+                <img src="./assets/Layout/alibaba/Image/cloth/2.png" alt="">
+                <div class="suggestion-info">
+                    <h4>Men Shirt Sleeve Polo Contrast</h4>
+                    <div class="price">$70.00 - $99.50</div>
+                </div>
+            </div>
+
+            <div class="suggestion">
+                <img src="./assets/Layout/alibaba/Image/cloth/3.png" alt="">
+                <div class="suggestion-info">
+                    <h4>Apple Watch Series Space Gray</h4>
+                    <div class="price">$70.00 - $99.50</div>
+                </div>
+            </div>
+
+            <div class="suggestion">
+                <img src="./assets/Layout/alibaba/Image/cloth/4.png" alt="">
+                <div class="suggestion-info">
+                    <h4>Basketball Crew Socks Long Stuff</h4>
+                    <div class="price">$70.00 - $99.50</div>
+                </div>
+            </div>
+
+            <div class="suggestion">
+                <img src="./assets/Layout/alibaba/Image/cloth/5.png" alt="">
+                <div class="suggestion-info">
+                    <h4>New Summer Men's T-Shirts</h4>
+                    <div class="price">$70.00 - $99.50</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RELATED PRODUCTS -->
+    <div class="related-products">
+
+        <h2>Related products</h2>
+
+        <div class="products">
+
+            <div class="product-card">
+                <img src="./assets/Image/tech/6.png" alt="">
+                <div class="product-name">Xiaomi Redmi 8 Original</div>
+                <div class="product-price">$32.00-$40.00</div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/Image/tech/8.png" alt="">
+                <div class="product-name">Xiaomi Redmi 8 Original</div>
+                <div class="product-price">$32.00-$40.00</div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/Image/tech/image 23.png" alt="">
+                <div class="product-name">Xiaomi Redmi 8 Original</div>
+                <div class="product-price">$32.00-$40.00</div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/Image/tech/image 29.png" alt="">
+                <div class="product-name">Xiaomi Redmi 8 Original</div>
+                <div class="product-price">$32.00-$40.00</div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/Image/tech/image 32.png" alt="">
+                <div class="product-name">Xiaomi Redmi 8 Original</div>
+                <div class="product-price">$32.00-$40.00</div>
+            </div>
+
+            <div class="product-card">
+                <img src="./assets/Image/tech/image 34.png" alt="">
+                <div class="product-name">Xiaomi Redmi 8 Original</div>
+                <div class="product-price">$32.00-$40.00</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Newsletter -->
+    <div class="newsletter-section">
+        <h3 class="newsletter-title">Subscribe on our newsletter</h3>
+        <p class="newsletter-sub">Get daily news on upcoming offers from many suppliers all over the world</p>
+        <div class="newsletter-form">
+            <div class="newsletter-input-wrap">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" placeholder="Email">
+            </div>
+            <button class="newsletter-btn">Subscribe</button>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+
+            <!-- Brand -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Brand</span>
+                </div>
+                <p class="footer-desc">Best information about the company goes here but now lorem ipsum is</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- About -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">About</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Find store</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Blogs</a></li>
+                </ul>
+            </div>
+
+            <!-- Partnership -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Partnership</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Find store</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Blogs</a></li>
+                </ul>
+            </div>
+
+            <!-- Information -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Information</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Money Refund</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+
+            <!-- For users -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">For users</h4>
+                <ul>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">My Orders</a></li>
+                </ul>
+            </div>
+
+            <!-- Get app -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Get app</h4>
+                <div class="app-buttons">
+                    <a href="#" class="app-btn">
+                        <i class="fa-brands fa-apple"></i>
+                        <div>
+                            <span class="app-sub">Download on the</span>
+                            <span class="app-store">App Store</span>
+                        </div>
+                    </a>
+                    <a href="#" class="app-btn">
+                        <i class="fa-brands fa-google-play"></i>
+                        <div>
+                            <span class="app-sub">GET IT ON</span>
+                            <span class="app-store">Google Play</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>© 2023 Ecommerce.</p>
+            <div class="footer-lang">
+                <img src="./assets/Layout1/Image/flags/US@2x.png" alt="">
+                <span>English</span>
+                <i class="fa-solid fa-chevron-up"></i>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

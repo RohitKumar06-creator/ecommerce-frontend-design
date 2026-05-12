@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!--
+  Checkout (demo) — inline <style> below + style.css for chrome
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1a73e8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="manifest" href="manifest.json">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="./cart.js" defer></script>
+    <script src="./site.js" defer></script>
+    <style>
+        /* One-off checkout page styles (rest of chrome from style.css) */
+
+        .checkout-wrap {
+            width: min(var(--site-max-width), calc(100% - (var(--site-gutter) * 2)));
+            margin: 12px auto 40px;
+            padding: 24px;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+
+        .checkout-wrap h1 {
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+
+        .checkout-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+        }
+
+        .checkout-total {
+            font-weight: 700;
+            font-size: 18px;
+            margin-top: 16px;
+        }
+
+        .checkout-actions {
+            margin-top: 24px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .checkout-actions button,
+        .checkout-actions a {
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+        }
+
+        .btn-primary {
+            background: #1a73e8;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="top-navbar">
+            <div class="logo">
+                <a href="index.html"><img src="./assets/Layout/Brand/logo-colored.png" alt="Brand"></a>
+            </div>
+            <form class="search-bar">
+                <input type="text" placeholder="Search" />
+                <select>
+                    <option>All category</option>
+                    <option>Electronics</option>
+                    <option>Clothing</option>
+                </select>
+                <button type="submit">Search</button>
+            </form>
+            <div class="nav-icons">
+                <div class="nav-item">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Profile</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-regular fa-message"></i>
+                    <span>Message</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-regular fa-heart"></i>
+                    <a href="listings.html"><span>Orders</span></a>
+                </div>
+                <a href="shopping-cart.html" class="nav-item nav-cart-link" data-nav-cart-link aria-label="Shopping cart">
+                    <span class="nav-cart-visual" aria-hidden="true">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="nav-cart-badge" data-cart-badge hidden>0</span>
+                    </span>
+                    <span class="nav-cart-label">My cart</span>
+                </a>
+            </div>
+        </div>
+        <nav class="bottom-navbar">
+            <ul class="menu-left">
+                <li><a href="listings.html?category=mobile-accessories">☰ All category</a></li>
+                <li><a href="listings.html">Hot offers</a></li>
+                <li>Gift boxes</li>
+                <li>Projects</li>
+                <li>Menu item</li>
+                <li>Help</li>
+            </ul>
+            <ul class="menu-right">
+                <li>English, USD</li>
+                <li>Ship to <img src="./assets/Layout1/Image/flags/DE@2x.png" alt="DE"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb-bar">
+        <div class="breadcrumb-inner">
+            <a href="index.html">Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="shopping-cart.html">Cart</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Checkout</span>
+        </div>
+    </div>
+
+    <div class="checkout-wrap" id="checkoutRoot">
+        <h1>Checkout</h1>
+        <div id="checkoutLines"></div>
+        <div class="checkout-total" id="checkoutTotal"></div>
+        <div class="checkout-actions">
+            <button type="button" class="btn-primary" id="completeOrderBtn">Complete order</button>
+            <a href="shopping-cart.html" class="btn-secondary">Back to cart</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const linesEl = document.getElementById("checkoutLines");
+            const totalEl = document.getElementById("checkoutTotal");
+            const completeBtn = document.getElementById("completeOrderBtn");
+            const items = window.Cart.getItems();
+
+            if (!items.length) {
+                linesEl.innerHTML = "<p>Your cart is empty.</p>";
+                totalEl.textContent = "";
+                completeBtn.disabled = true;
+                completeBtn.textContent = "Nothing to checkout";
+                return;
+            }
+
+            linesEl.innerHTML = items
+                .map(
+                    (l) =>
+                        `<div class="checkout-line"><span>${l.title} × ${l.qty || 1}</span><span>$${(
+                            l.price * (l.qty || 1)
+                        ).toFixed(2)}</span></div>`
+                )
+                .join("");
+
+            const subtotal = window.Cart.subtotal(items);
+            totalEl.textContent = "Total: $" + subtotal.toFixed(2);
+
+            completeBtn.addEventListener("click", () => {
+                window.Cart.clear();
+                linesEl.innerHTML =
+                    "<p><strong>Thank you!</strong> Your demo order was placed. Cart has been cleared.</p>";
+                totalEl.textContent = "";
+                completeBtn.disabled = true;
+                completeBtn.textContent = "Order complete";
+            });
+        });
+    </script>
+</body>
+
+</html>
